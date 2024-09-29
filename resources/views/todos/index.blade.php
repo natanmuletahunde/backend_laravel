@@ -10,12 +10,12 @@
     <div class="container mt-5">
         <h1 class="mb-4">To-Do List</h1>
 
-        <!-- Form to create new task -->
         <form action="{{ route('todos.store') }}" method="POST">
     @csrf
     <input type="text" name="task" placeholder="Enter task">
     <button type="submit">Submit</button>
 </form>
+
 
 
         <!-- Display all tasks -->
