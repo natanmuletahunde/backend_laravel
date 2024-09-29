@@ -18,15 +18,16 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'task' => 'required'
+            'task' => 'required|string|max:255',
         ]);
-
+    
         $todo = new Todo();
-        $todo->task = $request->task;
+        $todo->task = $request->task; // 'task' column must exist in the table
         $todo->save();
-
+    
         return redirect()->route('todos.index');
     }
+    
 
     // Delete a task
     public function destroy($id)

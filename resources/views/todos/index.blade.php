@@ -12,13 +12,11 @@
 
         <!-- Form to create new task -->
         <form action="{{ route('todos.store') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-                <label for="task" class="form-label">New Task</label>
-                <input type="text" class="form-control" id="task" name="task" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Task</button>
-        </form>
+    @csrf
+    <input type="text" name="task" placeholder="Enter task">
+    <button type="submit">Submit</button>
+</form>
+
 
         <!-- Display all tasks -->
         <h3 class="mt-4">Tasks</h3>
